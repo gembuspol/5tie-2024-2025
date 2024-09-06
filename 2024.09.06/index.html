@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zajęcia 2</title>
+    <script>
+        function goMessi(){
+            document.getElementById("test").innerHTML="<h1>Dodajemy duży napis</h1>";
+        }
+    </script>
+    <script src="mojskrypt.js"></script>
+</head>
+<body>
+    <!-- deklaracja javaScript w kodzie html
+    Możemy zadeklarować skrypt javaScript w kilku miejscach
+    - jako element wywołania akcji np. w onclick 
+    - w sekcji head między znacznikami <script> <script>
+    - w sekcji body między znacznikami <script> <script>
+    - w zewnetrznym pliku zazwyczaj z rozszerzeniem .js
+    -->
+    <p id="blok">To jest tekst który może znikać</p>
+    <button type="button" onclick='document.getElementById("blok").style.display="none"'">Zniknięcie bloku</button>
+    <button type="button" onclick='document.getElementById("blok").style.display="initial"'">Pojawienie się bloku</button>
+
+    <!-- blok dla zmiany wywołanej przez skrypt umiesczony w sekcji head -->
+     <p id="test">Tutaj pojawi się nowy tekst po wciśnięciu przycisku</p>
+     <button type="button" onclick="goMessi()">Zmiana zawartości</button>
+
+     <!-- Skrypt javaScript w sekcji body -->
+      <script>
+        function halaMadrit(){
+            document.getElementById("test2").style.backgroundColor="yellow";
+        }
+      </script>
+       <p id="test2">Tutaj pojawi się nowy kolor po wciśnięciu przycisku</p>
+       <button type="button" onclick="halaMadrit()">Zmiana zawartości</button>
+  <!-- wywołanie skryptu z zewnętrznego pliku -->
+   <button type="button" onclick="funkcja()">Pojawi się zaraz okienko</button>
+</body>
+</html>
