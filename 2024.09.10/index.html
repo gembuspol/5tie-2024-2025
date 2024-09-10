@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zajęcia 4</title>
+</head>
+<body>
+    <!-- 
+    Keyword 	Description
+var 	Declares a variable
+let 	Declares a block variable
+const 	Declares a block constant
+if 	Marks a block of statements to be executed on a condition
+switch 	Marks a block of statements to be executed in different cases
+for 	Marks a block of statements to be executed in a loop
+function 	Declares a function
+return 	Exits a function
+try 	Implements error handling to a block of statements
+    -->
+    <header>
+        <h1>Działania na zmiennych</h1>
+    </header>
+    <main>
+        <p>Deklaracja zmiennych o nazwie siedem i niewiem</p>
+        <script>
+            // deklaracja zmiennych - aby zadeklarować zmienną należy użyć słowa kluczowego "let". Drugi słowo kluczowe do definiowania zmiennej to "var". Według W3Schools słowa kluczowe var można używać do 2015 roku, potem należy używać tylko słowa kluczowego "let"
+            let siedem;
+            let niewiem;
+        </script>
+        <p>Przypisanie wartości do zmiennych i wypisanie ich na ekran</p>
+        <p id="wyniki1">Tutaj pojawią się wyniki</p>
+        <p id="wyniki2">Tutaj pojawią się wyniki</p>
+        <script>
+            siedem="To jest tekst z zmiennej siedem";
+            niewiem=1234;
+            document.getElementById("wyniki1").innerHTML="Zmienna siedem: "+siedem;
+            document.getElementById("wyniki2").innerHTML="Zmienna niewiem: "+niewiem;
+            function danila(a,b,c){
+                let delta=b*b-4*a*c;
+                return delta;
+            }
+        </script>
+        <p>Tutaj obliczymy deltę z zmiennych podanych w formularzu</p>
+        <label>Parametr a</label><input type="number" id="a"><br>
+        <label>Parametr b</label><input type="number" id="b"><br>
+        <label>Parametr c</label><input type="number" id="c"><br>
+        <button type="button" onclick="delta(3,4,6)">Oblicz deltę</button>
+        <p id="wynikDelta"></p>
+        <script>
+            function delta(){
+                let a=document.getElementById("a").value;
+                let b=document.getElementById("b").value;
+                let c=document.getElementById("c").value;
+                //wersja bez zewnętrznej funkcji
+               // let delta=b*b-4*a*c;
+               
+               //za pomocą zewnętrznej funkcji o nazwie danila obliczymy wartość delty i ta funkcja zwróci nam wynik. wynik zapiszemy do zmiennej delta
+               let delta=danila(a,b,c);
+                document.getElementById("wynikDelta").innerHTML="Wynik delty to: "+delta;
+            }
+        </script>
+    </main>
+    <footer>
+        <p>Stronę wykonał</p>
+    </footer>
+
+</body>
+</html>
