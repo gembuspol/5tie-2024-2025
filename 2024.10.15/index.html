@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pętla for</title>
+</head>
+<body>
+    <header>
+        <h1>Pętla for</h1>
+    </header>
+    <main>
+        <p id="wynik">tutaj bedzie wynik</p>
+        <button type="button" onclick="funkcja1()">Uruchom funkcję</button>
+        <script>
+            function funkcja1(){
+                //pętla for służy do powtarzanie kilkukrotnie konkretnych instrukcji
+                //pętlę for wybieramy w przypadku gdy wiemy ile razy ma się wykonać działanie
+                //wypisanie lizczby od 1 do 10
+                let tekst="";
+                for(let i=1;i<=10;i++){
+                    tekst+=i+"<br>";
+                }
+                document.getElementById("wynik").innerHTML=tekst;
+            }
+        </script>
+    </main>
+    <footer>
+        <p id="wynik1">tutaj bedzie wynik</p>
+        <button type="button" onclick="funkcja2()">Uruchom funkcję</button>
+        <script>
+            function funkcja2(){
+                let wynik2="Liczby podzielne przez 6 to: "
+                for(let k=1;k<100;k++){
+                    if(k%6==0){
+                        wynik2+=k+", ";
+                    }
+                }
+                document.getElementById("wynik1").innerHTML=wynik2;
+            }
+        </script>
+    </footer>
+    
+</body>
+</html>
