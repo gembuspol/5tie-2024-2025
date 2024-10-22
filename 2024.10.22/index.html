@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pętla for in oraz foreach</title>
+</head>
+<body>
+    <h2>Pętla for in w obiekcie</h2>
+    <p id="wynik1"></p>
+    <button type="button" onclick="funkcja1()">Funkcja1</button>
+    <script>
+        const gry ={
+            nazwa:"Fornite",
+            wiek:"od 13 lat",
+            producent:"Epic"
+        }
+        function funkcja1(){
+            let tekst="";
+            for(let x in gry){
+                tekst+="Klucz "+x+" wartosc "+gry[x]+"<br>";
+            }
+            document.getElementById("wynik1").innerHTML=tekst;
+        }
+    </script>
+    <h2>Pętla for in w tablicy</h2>
+    <button type="button" onclick="funkcja2()">Funkcja2</button>
+    
+    <script>
+        const tablica=[12,43,56,66,1,543,11];
+        
+        function funkcja2(){
+            let tekst="";
+            for(let c in tablica){
+                tekst+=tablica[c]+"<br>";
+            }
+            document.getElementById("wynik1").innerHTML=tekst;
+        }
+        
+    </script>
+    <h2>pętla foreach</h2>
+    <script>
+    const tablica2=[12,43,56,66,1,543,11];
+    function funkcja3(){
+        let txt="";
+        function tmp(wartosc){
+            txt+=wartosc+" test<br>";
+        }
+        tablica2.forEach(tmp);
+        document.getElementById("wynik1").innerHTML=txt;
+    }
+    
+</script>
+<button type="button" onclick="funkcja3()">Funkcja3</button>
+</body>
+</html>
