@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pętla while</title>
+</head>
+<body>
+    <header>
+        <h2>Pętla while</h2>
+    </header>
+    <section>
+        <button type="button" onclick="funkcja1()">Działanie funkcji 1</button>
+        <p id="wynik1"></p>
+        <script>
+            let wynik="";
+            function funkcja1(liczba){
+                //wypisujemy resztę z dzielenia przez 3
+                while(liczba>0){
+                    let reszta=liczba%3;
+                    wynik+=reszta+"<br>";
+                    liczba=Math.floor(liczba/3);
+                }
+                document.getElementById("wynik1").innerHTML=wynik;
+            }
+            let liczba=Math.floor(Math.random()*100);
+            funkcja1(liczba);
+        </script>
+    </section>
+    <section>
+        <h2>Pętla do while</h2>
+        <p id="wynik2"></p>
+        <script>
+            //do while najpierw wykonuje czynności a później sprawdza wynik
+            let tekst="Pętla while";
+            let start=10;
+            let stop=10;
+            while(stop>start){
+               tekst+=start+"; "
+                start++;
+            }
+            tekst+="<br> Pętla do while";
+            start=10;
+            do{
+                tekst+=start+"; "
+                start++;
+            }while(stop>start);
+            document.getElementById("wynik2").innerHTML=tekst;
+        </script>
+    </section>
+</body>
+</html>
