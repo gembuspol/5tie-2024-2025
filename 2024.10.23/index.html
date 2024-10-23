@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Pętla for - porównanie pętli</title>
+</head>
+<body>
+    <p id="wynik1"></p>
+    <p id="wynik2"></p>
+    <p id="wynik3"></p>
+    <p id="wynik4"></p>
+    <p id="wynik5"></p>
+    <button type="button" onclick="funkcja1()">Funkcja1</button>
+    <button type="button" onclick="funkcja2()">Funkcja2</button>
+    <button type="button" onclick="funkcja3()">Funkcja3</button>
+    <button type="button" onclick="funkcja4()">Funkcja4</button>
+    <script>
+        const osoby=['Kamil','Bartek','Kamil','Danila'];
+        function funkcja1(){
+            let txt="";
+            for( let x of osoby){
+                txt+=x+"---";
+            }
+            document.getElementById("wynik1").innerHTML=txt;
+        }
+        let napisik="Co myślisz o Igorze Fujaku";
+        function funkcja2(){
+            let txt="";
+            for (let a of napisik){
+                txt+=a+"<br>";
+            }
+            document.getElementById("wynik2").innerHTML=txt;
+        }
+        let y=20;
+        let z=20;
+        function funkcja3(){
+            let txt="";
+            for(y;y>z;y--){
+                txt+=y+"; ";
+            }
+            document.getElementById("wynik3").innerHTML=txt;
+            txt="";
+            y=20;
+            while(y>z){
+                txt+=y+"; ";
+                y--;
+            }
+            document.getElementById("wynik4").innerHTML=txt;
+            txt="";
+            y=20;
+            do{
+                txt+=y+"; ";
+                y--;
+            }while(y>z);
+            document.getElementById("wynik5").innerHTML=txt;
+        }
+    </script>
+</body>
+</html>
