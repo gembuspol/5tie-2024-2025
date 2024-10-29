@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularze</title>
+</head>
+<body>
+    <label for="liczba1">Podaj pierwszą liczbę</label><input type="number" id="liczba1" name="liczba1" disabled="true"><br>
+    <label for="liczba2">Podaj drugą liczbę</label><input type="number" id="liczba2" name="liczba2" disabled="true"><br>
+    <label for="liczba3">Podaj trzecią liczbę</label><input type="number" id="liczba3" name="liczba3" disabled="true"><br>
+
+    <br><br>
+    <label>Wybierz ilość pól do wprowadzania</label>
+    <label>1</label><input type="radio" id="radio" name="radio" onclick="funkcja1()">
+    <label>2</label><input type="radio" id="radio" name="radio" onclick="funkcja2()">
+    <label>3</label><input type="radio" id="radio" name="radio" onclick="funkcja3()">
+    <script>
+        function funkcja1(){
+            document.getElementById("liczba1").disabled=false;
+            document.getElementById("liczba2").disabled=true;
+            document.getElementById("liczba2").value="";
+            document.getElementById("liczba3").disabled=true;
+            document.getElementById("liczba3").value="";
+        }
+        function funkcja2(){
+            document.getElementById("liczba1").disabled=false;
+            document.getElementById("liczba2").disabled=false;
+            document.getElementById("liczba3").disabled=true;
+            document.getElementById("liczba3").value="";
+        }
+        function funkcja3(){
+            document.getElementById("liczba1").disabled=false;
+            document.getElementById("liczba2").disabled=false;
+            document.getElementById("liczba3").disabled=false;
+        }
+    </script>
+</body>
+</html>

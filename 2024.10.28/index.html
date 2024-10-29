@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+        <fieldset>
+            <legend>Formularz</legend>
+            <label for="liczba1">Podaj liczbę</label><input type="number" id="liczba1" name="liczba1"><br>
+            <label for="liczba2">Podaj liczbę</label><input type="number" id="liczba2" name="liczba2"><br>
+            <select id="dzialanie">
+                <option value="srednia">Srednia</option>
+                <option value="minimum">minimum</option>
+                <option value="iloraz">iloraz</option>
+            </select>
+            <button onclick="funkcja1()">Oblicz</button>
+        </fieldset>
+
+    <p id="wynik"></p>
+    <script>
+        function funkcja1(){
+            let liczba1=parseFloat(document.getElementById("liczba1").value);
+            let liczba2=parseFloat(document.getElementById("liczba2").value);
+            let selekt=document.getElementById("dzialanie").value;
+
+            //alert("Podane dane - liczba1: "+liczba1+", liczba2: "+liczba2+" dzialanie: " +selekt);
+            switch (selekt){
+                case "srednia":
+                    let srednia=(liczba1 + liczba2)/2;
+                    document.getElementById("wynik").innerHTML=srednia;
+                    break;
+                case "minimum":
+                    if(liczba1>liczba2){
+                        document.getElementById("wynik").innerHTML=liczba2;
+                    }else{
+                        document.getElementById("wynik").innerHTML=liczba1;
+                    }
+                    break;
+                
+                case "iloraz":
+                    document.getElementById("wynik").innerHTML=liczba1 / liczba2;
+                    break;
+                
+            }
+
+        }
+        
+    </script>
+    
+</body>
+</html>
