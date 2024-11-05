@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zmiana CSS za pomocą JavaScript</title>
+</head>
+<body>
+    <main>
+        <button id="test1" onclick="funkcja1()">Funkcja 1</button>
+        <button id="test2" onclick="funkcja2()">Funkcja 2</button>
+        <button id="test3" onclick="funkcja3()">Funkcja 3</button>
+    </main>
+    <section id="sekcja">
+        <p id="tekst">Dzisiaj nie ma Kamila Kubery</p>
+        <input type="liczba" id="liczba">
+    </section>
+    <script>
+        function funkcja1(){
+            document.getElementById("sekcja").style.height="300px";
+            document.getElementById("sekcja").style.backgroundColor="red";
+        }
+        function funkcja2(){
+            document.getElementById("tekst").style.fontFamily="Garamond";
+            document.getElementById("tekst").style.fontSize="25px";
+            document.getElementById("tekst").style.color="blue";
+            document.getElementById("liczba").style.padding="10px";
+            document.getElementById("liczba").style.borderRadius="10px";
+            document.getElementById("liczba").style.backgroundColor="green";
+        }
+        function funkcja3(){
+            document.getElementById("test1").style.backgroundColor="hsl(220,100%,50%)";
+            document.getElementById("test2").style.backgroundColor="hsl(220,50%,50%)";
+            document.getElementById("test3").style.backgroundColor="hsl(220,0%,50%)";
+        }
+    </script>
+</body>
+</html>
