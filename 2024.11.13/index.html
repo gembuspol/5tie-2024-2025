@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zdarzenia</title>
+</head>
+<body>
+    <p>Wprowadź tekst <input type="text" id="dane" oninput="duze()"></p>
+    <script>
+        function duze(){
+            const x=document.getElementById("dane");
+            x.value=x.value.toUpperCase();
+        }
+    </script>
+    <p>addEventListner</p>
+    <button id="przycisk1">Sprawdź działanie</button>
+    <p id="wynik">Tutaj pojawią się dane</p>
+    <script>
+        document.getElementById("przycisk1").addEventListener("click", wyswieltTekst);
+        function wyswieltTekst(){
+            document.getElementById("wynik").innerHTML="Działa przycisk"
+        }
+    </script>
+    <h2>Wykonie kilku funkcji na jednym przycisku</h2>
+    <button id="przycisk2">Sprawdź działanie</button>
+    <p id="wynik2">Tutaj pojawią się dane</p>
+    <script>
+        let przycik=document.getElementById("przycisk2");
+        przycik.addEventListener("mouseover", funkcja1);
+        przycik.addEventListener("click", funkcja2);
+        przycik.addEventListener("mouseout", funkcja3);
+        function funkcja1(){
+            document.getElementById("wynik2").innerHTML+="Myszka jest<br>";
+        }
+        function funkcja2(){
+            document.getElementById("wynik2").innerHTML+="Myszka klik<br>";
+        }
+        function funkcja3(){
+            document.getElementById("wynik2").innerHTML+="Myszki nie ma<br>";
+        }
+    </script>
+    <style>
+        #blok{
+            background-color: aqua;
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+    <section id="blok">
+        <button onclick="usunZdarzenie()">Usuń Zdarzenie</button>
+    </section>
+    <p id="wynik3">Wyniki</p>
+    <script>
+        document.getElementById("blok").addEventListener("mousemove",losowaLiczba);
+        function losowaLiczba(){
+            document.getElementById("wynik3").innerHTML=Math.random();
+        }
+        function usunZdarzenie(){
+            document.getElementById("blok").removeEventListener("mousemove",losowaLiczba);
+        }
+    </script>
+</body>
+</html>

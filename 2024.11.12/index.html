@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animacje</title>
+</head>
+<body>
+    <section id="glowny">
+        <section id="kwadracik">
+            TEST
+        </section>
+    </section>
+    <style>
+        #glowny{
+            width: 300px;
+            height: 300px;
+            background-color: aqua;
+            position: relative;
+        }
+        #kwadracik{
+            width: 50px;
+            height: 50px;
+            background-color: burlywood;
+            position: absolute;
+        }
+    </style>
+    <button onclick="ruch()">Włącz ruch</button>
+    <script>
+        function ruch(){
+            let id=null;
+            const obiekt=document.getElementById("kwadracik");
+            let pozycjaPocz=0;
+            clearInterval(id);
+            id=setInterval(rusz,3);
+            function rusz(){
+                if(pozycjaPocz==250){
+                    clearInterval(id);  
+                }else{
+                pozycjaPocz++;
+                obiekt.style.top=pozycjaPocz+"px";
+                obiekt.style.left=pozycjaPocz+"px";
+                }
+            }
+
+        }
+    </script>
+    
+</body>
+</html>
