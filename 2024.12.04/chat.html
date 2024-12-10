@@ -39,16 +39,65 @@
                 <img src="Krzysiek.jpg">
                 <p>Tak! A ty?</p>
             </section>
+        </section>
             <label for="wiadomosc">Wpisz wiadomość</label>
             <input type="text" id="wiadomosc">
-            <button>Wyślij</button>
+            <button onclick="wyslij()">Wyślij</button>
             <br>
-            <button>Generuj losową odpowiedź</button>
-        </section>
+            <button onclick="generuj()">Generuj losową odpowiedź</button>
+        
         
     </main>
     <footer>
         <h5>Chat wykonał: aaaaa</h5>
     </footer>
+    <script>
+        function wyslij(){
+            let wiadomosc=document.getElementById("wiadomosc").value;
+            const chat=document.getElementById("chat");
+            const jolkaBlok=document.createElement("section");
+            jolkaBlok.classList.add('jola');
+            const jolkaZdj=document.createElement("img");
+            jolkaZdj.src="Jolka.jpg";
+            jolkaZdj.alt="Jolanta Nowak";
+            const jolkaP=document.createElement("p");
+            jolkaP.textContent=wiadomosc;
+            jolkaBlok.appendChild(jolkaZdj);
+            jolkaBlok.appendChild(jolkaP);
+            chat.appendChild(jolkaBlok);
+            jolkaBlok.scrollIntoView();
+            // console.log("test");
+        }
+        const odpowiedzi=[
+            "Świetnie!",
+            "Kto gra główną rolę?",
+            "Lubisz filmy Tego reżysera?",
+            "Będę 10 minut wcześniej",
+            "Może kupimy sobie popcorn?",
+            "Ja wolę Colę",
+            "Zaproszę jeszcze Grześka",
+            "Tydzień temu też byłem w kinie na Diunie",
+            "Ja funduję bilety"
+        ]
+        function generuj(){
+            let losowanaLiczba=Math.floor(Math.random()*odpowiedzi.length);
+            const odpowiedz=odpowiedzi[losowanaLiczba];
+            const chat=document.getElementById("chat");
+
+            const krzysiekBlok=document.createElement("section");
+            krzysiekBlok.classList.add("krzysiek");
+            const krzysiekZdj=document.createElement("img");
+            krzysiekZdj.src="Krzysiek.jpg";
+            krzysiekZdj.alt="Krzysztof Łukasiński";
+            const krzysiekP=document.createElement("p");
+            krzysiekP.textContent=odpowiedz;
+
+            krzysiekBlok.appendChild(krzysiekZdj);
+            krzysiekBlok.appendChild(krzysiekP);
+            chat.appendChild(krzysiekBlok);
+            krzysiekBlok.scrollIntoView();
+        }
+
+    </script>
 </body>
 </html>
